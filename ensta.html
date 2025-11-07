@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ensta</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+      z-index: 10;
+    }
+
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ffd700; }
+
+    .hero {
+      background: url("ensta.jpg") center/cover no-repeat;
+      filter: brightness(0.8);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(3px);
+    }
+
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; }
+
+    .about {
+      padding: 80px 20px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: #370035f3;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    .majors {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .major-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .major {
+      background: #fafafa;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .major:hover { transform: translateY(-5px); }
+
+    .major img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .major h3 { margin: 15px 0 10px; }
+    .major p { padding: 0 15px 20px; color: #555; }
+
+    .contact {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact p { font-size: 1.1rem; margin: 10px 0; }
+
+    .advices {
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+
+    .advices h2 {
+      color: #370035f3;
+      margin-bottom: 20px;
+    }
+
+    .advices ol {
+      text-align: left;
+      display: inline-block;
+      max-width: 700px;
+      margin-top: 20px;
+    }
+
+    .advices li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-section">
+      <img src="ENSTA logo (1).png" alt="Logo">
+      <h2>ENSTA</h2>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#majors">Majors</a>
+      <a href="#contact">Contact</a>
+      <a href="#advices">Advices</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to ENSTA</h1>
+    <p>You want to be a future engineer? You are in the right place.</p>
+  </section>
+
+  <section class="majors" id="majors">
+    <h2>Our Majors</h2>
+    <div class="major-container">
+      <div class="major">
+        <img src="cs50.jpg" alt="Computer Science">
+        <h3>Computer Science</h3>
+        <p>Learn programming, algorithms, and software design to solve real-world problems.</p>
+      </div>
+      <div class="major">
+        <img src="elc.jpg" alt="Engineering">
+        <h3>Engineering</h3>
+        <p>Develop innovative engineering skills and hands-on experience in design and technology.</p>
+      </div>
+     
+        
+    </div>
+  </section>
+       
+   <section class="advices" id="advices">
+    <h2> Web Dev Advices</h2>
+    <button onclick="toggleArticl()">Read more</button>
+    <p id="adv">you should to learn about the web dev,and work while you learn to improve your skils ,and never give up, you should to participate in the events , creat your projects ,work with team </p>
+
+   </section>
+ 
+  <section class="about" id="about">
+    <h2>About Us</h2>
+ <button onclick="toggleArticle()">Read Article</button>
+    <p>
+      ENSTA (École Nationale Supérieure des Technologies Avancées) is one of the most innovative engineering schools in the country. 
+      Our mission is to train creative, multidisciplinary engineers capable of using technology and science to solve real-world challenges. 
+      ENSTA combines the strength of computer science, applied sciences, and advanced technology to prepare students for the demands of the modern world.
+      <br><br>
+      We offer a dynamic academic environment where students can explore artificial intelligence , Security of systems. With a student-friendly environment including facilities and scientific clubs and Culturel
+       such as: Community of Developers and Engineers Club ,LIGHT CLUB ... . 
+      <br><br>
+      At ENSTA, we don’t just teach theory — we shape the future. 
+      Our graduates are equipped with the technical knowledge, creative mindset, and ethical vision to design technologies that make life easier and smarter. 
+      We believe in excellence, teamwork, and innovation as the keys to engineering a better tomorrow.
+    </p>
+         
+  </section>
+
+  
+
+  <section class="contact" id="contact">
+     <h2>Contact Us</h2>
+    <p>📞 Phone: +213 558 104 177</p>
+    <p>📞 Phone: +213 771 351 963</p>
+     <p>📧 Email: ba.slimani@ensta.edu.dz</p>
+     <p>📧 Email: ba.chouia@ensta.edu.dz</p>
+  </section>
+
+
+ <script>
+    function toggleArticle() {
+      const articleText = document.getElementById('articleText');
+      articleText.style.display = articleText.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleArticl() {
+      const adv = document.getElementById('adv');
+      adv.style.display = adv.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
